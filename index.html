@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration Form</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.cloudflare.com/ajax/libs/jquery.validate/1.19.1/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+</head>
+<body>
+    <h1>User Registration Form</h1>
+    <form  action=" " name="registration form">
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
+        </div>
+        <div>
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required>
+        </div>
+        <div>
+            <label for="zip-code">Zip Code:</label>
+            <input type="text" id="zip-code" name="zip-code" pattern="[0-8]{5}" required>
+        </div>
+        <div>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div>
+            
+            <button type="submit"> click to Register</button>
+        </div>
+        <strong>Lightbox Sample</strong><br>
+    <a class="example-image-link" href="images/canada_leaf.jpg" data-lightbox="example-1"><img class="example-image" src="images/canada_leaf.jpg" alt="image-1" /></a>
+
+    <br>
+    <br>
+    <br>
+    <strong>bxSlider Sample</strong><br>
+    <ul class="bxslider">
+      <li><img src="images/canada_leaf.jpg" /></li>
+      <li><img src="images/bower_pond.jpg" /></li>      
+      <li><img src="images/discover canyon.jpg" /></li>      
+    </ul>
+
+
+ 
+
+    
+     <!-- Lightbox JavaScript file -->
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <!-- bxSlider Javascript file -->
+   <script src="js/jquery.bxslider.js"></script>
+
+   <script >  
+   
+   $(document).ready(function() {
+    $('#registration-form').validate({
+        rules: {
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 4
+            },
+            'first-name': {
+                required: true
+            },
+            'last-name': {
+                required: true
+            },
+            'zip-code': {
+                required: true,
+                digits: true,
+                minlength: 5,
+                maxlength: 5
+            },
+            phone: {
+                required: true,
+                digits: true
+            }
+        },
+        messages: {
+            email: "Please input a valid email address.",
+            password: {
+                required: "Please enter ypur password.",
+                minlength: "Password must be at least 4 characters long."
+            },
+            'zip-code': {
+                required: "Please enter a 5-digit zip code.",
+                digits: "Please enter a valid 5-digit zip code.",
+                minlength: "Zip code must be 5 digits long.",
+                maxlength: "Zip code must be 5 digits long."
+            },
+            
+        },
+        submitHandler: function(form) {
+            
+            " you can submit the form using AJAX."
+        }
+        
+            });
+    
+})
+    
+$(document).ready(function()
+        {
+            $('.bxslider').bxSlider({
+                mode: 'horizontal',
+                moveSlides: 1,
+                slideMargin: 40,
+                infiniteLoop: true,
+                slideWidth: 660,
+                minSlides: 3,
+                maxSlides: 3,
+                speed: 800,
+            });
+        });      
+   </script>
+    </form>
+
+    
+  
+   
+
+</body>
+</html>
